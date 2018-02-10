@@ -1,0 +1,29 @@
+<!-- IF S_REGISTERED_USER -->
+
+<ul id="menu-bar">
+    <li><a class="home-icon" href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->">Home</a></li>
+    <li><a class="activity-icon" href="{U_SEARCH_ACTIVE_TOPICS}">Activity</a></li>
+    <!-- IF U_ACP -->
+    <li><a class="admin-icon" href="{U_ACP}">Admin</a></li>
+    <!-- ENDIF -->
+    <!-- IF U_MCP -->
+    <li><a class="admin-icon" href="{U_MCP}">Mod</a></li>
+    <!-- ENDIF -->
+    <li class="reg-button" style="float:right" ><a href="{U_LOGIN_LOGOUT}">Logout</a></li>
+    <li style="float:right" ><a class="account-icon" href="{U_PROFILE}">Account</a></li>
+</ul>
+
+<!-- ENDIF -->
+<!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
+<ul id="menu-bar">
+    <li><a class="home-icon" href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->">Home</a></li>
+    <li class="reg-button" style="float: right"><a href="{U_REGISTER}">Create Account</a></li>
+    <li style="float: right"><a href="{U_LOGIN_LOGOUT}">Login</a></li>
+</ul>
+<!-- ENDIF -->
+<div id="body-header">
+    <!-- IF not S_IS_BOT -->
+    <!-- IF S_INDEX -->
+    <!-- ENDIF -->
+    <!-- ENDIF -->
+</div>

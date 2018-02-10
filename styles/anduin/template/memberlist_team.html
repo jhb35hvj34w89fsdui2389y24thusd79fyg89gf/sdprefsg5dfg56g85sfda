@@ -1,0 +1,38 @@
+<!-- INCLUDE overall_header.html -->
+
+<h2 class="team-page-title">Staff Members</h2>
+
+<form method="post" action="{S_MODE_ACTION}">
+
+<!-- BEGIN group -->
+<div class="forumbg forumbg-table">
+	<div class="inner">
+
+	<table class="table1" id="team">
+	<thead>
+	<tr>
+		<th class="name" data-dfn="{L_RANK}{L_COMMA_SEPARATOR}{L_USERNAME}"><!-- IF group.U_GROUP -->{group.GROUP_NAME}<!-- ELSE -->{group.GROUP_NAME}<!-- ENDIF --></th>
+		<th class="info">Rank</th>
+	</tr>
+	</thead>
+	<tbody>
+<!-- BEGIN user -->
+	<tr class="team-members-list">
+		<td><p class="team-username">{group.user.USERNAME_FULL}</p></td>
+		<td class="info">
+			<p class="team-rank-title">{group.user.RANK_TITLE}</p></td>
+	</tr>
+<!-- BEGINELSE -->
+	<tr class="team-members-list">
+		<td colspan="3"><strong>There are no members in this group.</strong></td>
+	</tr>
+<!-- END user -->
+	</tbody>
+	</table>
+	
+	</div>
+</div>
+<!-- END group -->
+
+</form>
+<!-- INCLUDE overall_footer.html -->

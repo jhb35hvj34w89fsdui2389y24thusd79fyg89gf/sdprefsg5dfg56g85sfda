@@ -1,0 +1,32 @@
+<!-- INCLUDE login-panel.html -->
+
+<form action="{S_PROFILE_ACTION}" method="post" id="resend">
+
+    <a href="{U_INDEX}"><img class="register-panel-image" src="{ROOTH_PATH}styles/anduin/theme/images/logo.png"></img>
+</a>
+<div class="register-panel">
+	<div class="inner">
+
+	<div class="content">
+
+		<fieldset class="register-field">
+		<dl>
+			<dd><input class="inputbox-login" type="text" name="username" id="username" size="25" placeholder="Username" /></dd>
+		</dl>
+		<dl>
+			<dd><input class="inputbox-login" type="email" name="email" id="email" size="25" maxlength="100" placeholder="Email" /></dd>
+		</dl>
+		<dl>
+			<dt>&nbsp;</dt>
+			<dd>{S_HIDDEN_FIELDS}<input type="submit" name="submit" id="submit" class="login-panel-button" value="RESEND PASSWORD" tabindex="2" /></dd>
+		</dl>
+		{S_FORM_TOKEN}
+		</fieldset>
+	</div>
+
+	</div>
+</div>
+</form>
+
+<!-- INCLUDE overall_footer.html -->
+

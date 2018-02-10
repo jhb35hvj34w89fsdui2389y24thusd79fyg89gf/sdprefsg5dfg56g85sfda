@@ -1,0 +1,170 @@
+fieldset,
+img,
+legend {
+    border: 0
+}
+
+fieldset,
+legend,
+td,
+th,
+ul {
+    padding: 0
+}
+
+[role=main],
+sub,
+sup {
+    position: relative
+}
+
+.PatchNotes-statusTag {
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #00b4ff;
+    border: 1px solid #000;
+    border-radius: .1875rem;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, .25) inset;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 13px;
+    margin-bottom: .9375rem;
+    min-height: 2rem;
+    padding: 0 10px
+}
+
+.PatchNotes-statusTag.solution,
+.Topic-statusBar .Topic-statusTag.solution,
+.TopicPost-statusTag.solution {
+    background-color: #14a562
+}
+
+.PatchNotes-statusTag.highly-rated,
+.Topic-statusBar .Topic-statusTag.highly-rated,
+.TopicPost-statusTag.highly-rated {
+    background-color: #e87b06
+}
+
+.PatchNotes-statusTag.spam,
+.Topic-statusBar .Topic-statusTag.spam,
+.TopicPost-statusTag.spam {
+    background-color: #ce453c
+}
+
+.PatchNotes-statusTagContent,
+.TopicPost-statusTagContent {
+    -ms-flex-align: center;
+    align-items: center;
+    color: #fff;
+    display: -ms-flexbox;
+    display: flex;
+    text-transform: uppercase
+}
+
+
+
+@media only screen and (min-width:641px) {
+    .PatchNotes-statusTag {
+        margin-bottom: 1rem
+    }
+}
+
+
+
+.Scm-content {
+    color: rgba(255, 255, 255, .7);
+    line-height: 1.5;
+    margin-top: 30px
+}
+
+h2,
+h3 {
+    font-family: "Arial Narrow", Arial, sans-serif;
+    font-weight: 100;
+    line-height: 1
+}
+
+.Scm-content strong {
+    color: #fff
+}
+
+a:hover,
+h2,
+h3 {
+    color: #fff
+}
+
+.section {
+    border-bottom: 1px solid rgba(255, 255, 255, .15);
+    font-size: .9375rem;
+    margin: auto auto 30px;
+    max-width: 740px;
+    padding: 0 15px 30px
+}
+
+.PatchNotes-statusTag {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    margin-bottom: 0
+}
+
+.PatchNotes-statusTag:before {
+    height: 24px
+}
+
+.PatchNotes-statusTag.newFeatures {
+    background-color: #14a562
+}
+
+.PatchNotes-statusTag.newFeatures:before {
+    background-position: -96px -408px
+}
+
+.PatchNotes-statusTag.improvements {
+    background-color: #e87b06;
+}
+
+.PatchNotes-statusTag.design {
+    background-color: #6006ad;
+}
+
+.PatchNotes-statusTag.fixes {
+    background-color: #b20000;
+}
+
+.PatchNotes-statusTag.futureFeatures:before {
+    background-position: -48px 0
+}
+
+.PatchNotes-statusTagText {
+    -ms-flex-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.PatchNotes-button--feedback {
+    font-size: 1.25rem;
+    height: 60px;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.PatchNotes-button--feedback .Button-content:before {
+    background-position: -144px -24px;
+    height: 24px
+}
+
+h2 {
+    font-size: 2.188rem;
+    margin: 0 0 20px
+}
+
+h3 {
+    font-size: 1.563rem;
+    margin: 0 0 30px
+}
+
+ul {
+    margin-left: 25px
+}

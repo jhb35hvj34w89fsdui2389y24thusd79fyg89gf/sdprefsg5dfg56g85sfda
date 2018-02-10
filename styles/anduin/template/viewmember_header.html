@@ -1,0 +1,19 @@
+<!-- INCLUDE overall_ucp_header.html -->
+
+<center>
+    <div class="viewmember-avatar">
+    <!-- IF AVATAR_IMG -->{AVATAR_IMG}
+    <!-- ELSE --><img src="{ROOT_PATH}styles/anduin/theme/images/avatars/no-avatar-3.png" alt="" />
+    <!-- ENDIF -->
+</div>
+</center>
+<p class="viewmember-title">{USERNAME}</p>
+<!-- IF RANK_TITLE --><p class="profile-rank-title">{RANK_TITLE}</p><!-- ENDIF -->
+<center><!-- IF U_EMAIL --><a href="{U_EMAIL}" class="contact-buttons">&#9993; Send Email</a><!-- ENDIF --> <!-- IF U_PM --> <a href="{U_PM}" class="contact-buttons">&#9998; Send PM</a><!-- ENDIF -->
+</center>
+</br>
+
+<p class="user-information"><a class="user-infolinks" href="#">{USERNAME}</a> created his account on <a class="user-infolinks">{JOINED}</a>. Since then he submitted <a class="user-infolinks" href="{U_SEARCH_USER}">{POSTS}</a> posts to our forums. </br> The user's favorite forum is <a class="user-infolinks" href="{U_ACTIVE_FORUM}">{ACTIVE_FORUM}</a> and his favorite topic is <a class="user-infolinks" href="{U_ACTIVE_TOPIC}">{ACTIVE_TOPIC}</a>.</p>
+    
+
+<!-- INCLUDE overall_footer.html -->

@@ -1,0 +1,55 @@
+/* FONTS */
+@font-face {
+  font-family: "Semplicita";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/semplicita.woff");
+}
+
+@font-face {
+  font-family: "Blizzard";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/blizzard.woff") format("woff"), url("fonts/blizzard.ttf") format("truetype"), url("fonts/blizzard.woff2") format("woff2");
+}
+
+
+/* Navigation */
+.res-nav {
+		list-style-type: none;
+		width: 100%;
+        background-color: rgba(255,255,255,.08);
+        border-bottom: 1px solid rgba(255,255,255,.15);
+		padding: 0px 0px;
+		overflow: hidden;
+		margin: 0;
+        transition: all 0.3s;
+	}
+	
+.res-nav li {
+		float: left;
+		text-align: center;
+	}
+	
+.res-nav li a {
+		display: block;
+		color: #fff;
+        font-family: "Blizzard", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+		text-align: center;
+		padding: 10px 20px;
+		text-decoration: none;
+		font-size: 15px;
+        transition: all 0.3s;
+	}
+	
+.res-nav li a:hover {
+		color: #fff;
+		background-color: rgba(255,255,255,.09);
+        transition: all 0.3s;
+	}
+	
+li.icon {
+		display: none;
+	}

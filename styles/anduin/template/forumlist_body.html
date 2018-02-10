@@ -1,0 +1,86 @@
+<div id="search-box" class="search-main" role="search">
+    <form action="{U_SEARCH}" method="get" id="search">
+        <fieldset>
+            <input name="keywords" id="keywords" type="search" maxlength="128" class="inputbox-search" size="20" value="{SEARCH_WORDS}" placeholder=" &#128270; Search all forums" /> {S_SEARCH_HIDDEN_FIELDS} </fieldset>
+    </form>
+</div>
+<!-- BEGIN forumrow -->
+<!-- IF (forumrow.S_IS_CAT and not forumrow.S_FIRST_ROW) or forumrow.S_NO_CAT  -->
+</ul>
+</div>
+</div>
+<!-- IF S_INDEX  -->
+</div>
+<!-- ENDIF -->
+<!-- ENDIF -->
+<!-- EVENT forumlist_body_category_header_before -->
+<!-- IF forumrow.S_IS_CAT or forumrow.S_FIRST_ROW  or forumrow.S_NO_CAT  -->
+<!-- IF S_INDEX or (S_VIEWFORUM and not (S_DISPLAY_ACTIVE or TOTAL_TOPICS)) -->
+
+<div id="category-{forumrow.FORUM_ID}" class="collapse-box">
+    <h2><!-- IF forumrow.S_IS_CAT --><a href="{forumrow.U_VIEWFORUM}">{forumrow.FORUM_NAME}</a><!-- ELSE -->{L_FORUMS}<!-- ENDIF --></h2>
+    <!-- ENDIF -->
+    <div class="forabg forum-blocks">
+        <div class="inner">
+            <ul class="forums">
+                <!-- ENDIF -->
+                <!-- EVENT forumlist_body_category_header_after -->
+                <!-- IF not forumrow.S_IS_CAT -->
+                <!-- EVENT forumlist_body_forum_row_before -->
+                <li onclick="location.href='{forumrow.U_VIEWFORUM}';" class="row">
+                    <!-- EVENT forumlist_body_forum_row_prepend -->
+                    <dl class="icon {forumrow.FORUM_IMG_STYLE}"> <dt>
+					<!-- IF forumrow.FORUM_IMAGE --><div class="<!-- IF forumrow.FORUM_DESC -->forum-image<!-- ELSE -->forum-image-nosubforum<!-- ENDIF -->">{forumrow.FORUM_IMAGE}</div><!-- ENDIF -->
+					<a href="{forumrow.U_VIEWFORUM}" class="icon-link"></a>
+
+					<!-- IF .forumrow.subforum and forumrow.S_LIST_SUBFORUMS -->
+					<div class="dropdown-container dropdown-button-control">
+						<span class="dropdown-trigger"></span>
+						<div class="dropdown hidden">
+							<div class="dropdown-contents">
+							<!-- EVENT forumlist_body_subforums_before -->
+							<strong>{forumrow.L_SUBFORUM_STR}{L_COLON}</strong>
+							<!-- BEGIN subforum -->
+								<a href="{forumrow.subforum.U_SUBFORUM}" class="subforum<!-- IF forumrow.subforum.S_UNREAD --> unread<!-- ELSE --> read<!-- ENDIF -->">{forumrow.subforum.SUBFORUM_NAME}</a>
+							<!-- END subforum -->
+							<!-- EVENT forumlist_body_subforums_after -->
+							</div>
+						</div>
+					</div>
+					<!-- ENDIF -->
+					<div class="list-inner">
+                        <!-- IF forumrow.S_LOCKED_FORUM -->
+						<a href="{forumrow.U_VIEWFORUM}" class="<!-- IF forumrow.FORUM_DESC -->forumtitle<!-- ELSE -->forumtitle-nosubforum<!-- ENDIF -->" data-balloon="This Forum is Locked!" data-balloon-pos="down">{forumrow.FORUM_NAME}<img class="locked-forum-icon" src="{ROOT_PATH}styles/anduin/theme/images/icons/locked.png"></img></a>
+                        <!-- ELSE -->
+                        <a href="{forumrow.U_VIEWFORUM}" class="<!-- IF forumrow.FORUM_DESC -->forumtitle<!-- ELSE -->forumtitle-nosubforum<!-- ENDIF -->">{forumrow.FORUM_NAME}</a>
+                        <!-- ENDIF -->
+						<span class="forum-description">{forumrow.FORUM_DESC}</span>
+					</div>
+				</dt>
+                        <dd class="mcp-status"><span>
+						<!-- IF forumrow.U_UNAPPROVED_TOPICS -->
+							<a href="{forumrow.U_UNAPPROVED_TOPICS}">{UNAPPROVED_IMG}</a>
+						<!-- ELSEIF forumrow.U_UNAPPROVED_POSTS -->
+							<a href="{forumrow.U_UNAPPROVED_POSTS}">{UNAPPROVED_POST_IMG}</a>
+						<!-- ENDIF -->
+						</span> </dd>
+                        <!-- ENDIF -->
+                    </dl>
+                    <!-- EVENT forumlist_body_forum_row_append -->
+                </li>
+                <!-- EVENT forumlist_body_forum_row_after -->
+                <!-- IF forumrow.S_LAST_ROW -->
+            </ul>
+        </div>
+    </div>
+    <!-- IF S_INDEX or (S_VIEWFORUM and not (S_DISPLAY_ACTIVE or TOTAL_TOPICS)) -->
+</div>
+<!-- ENDIF -->
+<!-- EVENT forumlist_body_last_row_after -->
+<!-- ENDIF -->
+<!-- BEGINELSE -->
+
+<div class="panel">
+    <div class="inner"> <strong>{L_NO_FORUMS}</strong> </div>
+</div>
+<!-- END forumrow -->

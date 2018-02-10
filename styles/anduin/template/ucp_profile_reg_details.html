@@ -1,0 +1,43 @@
+<!-- INCLUDE ucp_header.html -->
+
+<form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
+
+	<!-- IF S_FORCE_PASSWORD -->
+		<p class="error">{L_FORCE_PASSWORD_EXPLAIN}</p>
+	<!-- ENDIF -->
+
+	<fieldset>
+	<!-- IF ERROR --><p class="alert-ucp alert-ucp-error alert-ucp-icon">{ERROR}</p><!-- ENDIF -->
+	<!-- EVENT ucp_profile_register_details_before -->
+	<dl class="ucp-settings-fields">
+		<dd><!-- IF S_CHANGE_USERNAME --><input type="text" name="username" id="username" value="{USERNAME}" placeholder="Username" class="inputbox-ucp-settings" title="Your Username" /><!-- ELSE --><strong>{USERNAME}</strong><!-- ENDIF --></dd>
+	</dl>
+	<dl class="ucp-settings-fields">
+		<dd><!-- IF S_CHANGE_EMAIL --><input type="email" name="email" id="email" maxlength="100" value="{EMAIL}" placeholder="Email" class="inputbox-ucp-settings" title="Your Email" autocomplete="off" /><!-- ELSE --><strong>{EMAIL}</strong><!-- ENDIF --></dd>
+	</dl>
+	<!-- IF S_CHANGE_PASSWORD -->
+		<dl class="ucp-settings-fields">
+			<dd><input type="password" name="new_password" id="new_password" maxlength="255" value="{NEW_PASSWORD}" class="inputbox-ucp-settings" placeholder="New Password" title="{L_CHANGE_PASSWORD}" autocomplete="off" /></dd>
+		</dl>
+		<dl class="ucp-settings-fields">
+			<dd><input type="password" name="password_confirm" id="password_confirm" maxlength="255" value="{PASSWORD_CONFIRM}" placeholder="Confirm Password" class="inputbox-ucp-settings" title="{L_CONFIRM_PASSWORD}" autocomplete="off" /></dd>
+		</dl>
+	<!-- ENDIF -->
+	<!-- EVENT ucp_profile_register_details_after -->	
+	</fieldset>
+
+
+	<fieldset>
+	<dl class="ucp-settings-fields">
+		<dd><input type="password" name="cur_password" id="cur_password" maxlength="255" value="{CUR_PASSWORD}" class="inputbox-ucp-settings" placeholder="Current Password" title="{L_CURRENT_PASSWORD}" autocomplete="off" /></dd>
+	</dl>
+	</fieldset>
+
+<fieldset class="submit-buttons">
+	{S_HIDDEN_FIELDS}
+	<input type="submit" name="submit" value="Save Changes" class="button1" />
+	{S_FORM_TOKEN}
+</fieldset>
+</form>
+
+<!-- INCLUDE ucp_footer.html -->

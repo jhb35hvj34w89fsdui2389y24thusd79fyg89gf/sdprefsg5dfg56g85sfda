@@ -1,0 +1,57 @@
+<!-- INCLUDE login-panel.html -->
+
+<form action="{S_LOGIN_ACTION}" method="post" id="login" data-focus="<!-- IF S_ADMIN_AUTH -->{PASSWORD_CREDENTIAL}<!-- ELSE -->{USERNAME_CREDENTIAL}<!-- ENDIF -->">
+<div class="login-panel">
+	<div class="inner">
+       <a href="{U_INDEX}"><img class="login-panel-image" src="{ROOT_PATH}styles/anduin/theme/images/logo.png"></img>
+</a>
+	<div class="login-content">
+
+		<fieldset <!-- IF not S_CONFIRM_CODE -->class="login-field"<!-- ELSE -->class="login-field"<!-- ENDIF -->>
+		<!-- IF LOGIN_ERROR --><div class="alert alert-error alert-icon">&#9888; Wrong credentials.</div><!-- ENDIF -->
+		<dl class="username-login">
+			
+			<dd><input type="text" tabindex="1" name="{USERNAME_CREDENTIAL}" id="{USERNAME_CREDENTIAL}" size="30" placeholder="Username" class="inputbox-login" /></dd>
+		</dl>
+		<dl>
+			
+			<dd><input type="password" tabindex="2" id="{PASSWORD_CREDENTIAL}" name="{PASSWORD_CREDENTIAL}" size="25" placeholder="Password" class="inputbox-login" autocomplete="off" /></dd>
+			
+		</dl>
+		<!-- IF CAPTCHA_TEMPLATE and S_CONFIRM_CODE -->
+			<!-- DEFINE $CAPTCHA_TAB_INDEX = 3 -->
+			<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
+		<!-- ENDIF -->
+		<!-- IF S_DISPLAY_FULL_LOGIN -->
+		<!-- ENDIF -->
+
+		{S_LOGIN_REDIRECT}
+		<dl>
+			<dt>&nbsp;</dt>
+			<dd>{S_HIDDEN_FIELDS}<input type="submit" name="login" tabindex="6" value="{L_LOGIN}" class="login-panel-button" /></dd>
+            
+		</dl>
+        <!-- IF S_REGISTERED_USER -->
+    <!-- ELSE -->
+    <div class="login-line">
+            <span>Or</span>
+</div>
+            </br>
+    <dd><a class="login-panel-text" href="{U_REGISTER}">Create a Free Account</a></dd>
+    <!-- ENDIF -->
+
+        <!-- IF S_DISPLAY_FULL_LOGIN and (U_SEND_PASSWORD or U_RESEND_ACTIVATION) -->
+				<!-- IF U_SEND_PASSWORD --><dd><a class="login-panel-text" href="{U_SEND_PASSWORD}">I Forgot My Password!</a></dd><!-- ENDIF -->
+				<!-- IF U_RESEND_ACTIVATION --><dd><a href="{U_RESEND_ACTIVATION}">{L_RESEND_ACTIVATION}</a></dd><!-- ENDIF -->
+			<!-- ENDIF -->
+		</fieldset>
+	</div>
+
+	<!-- IF not S_ADMIN_AUTH and PROVIDER_TEMPLATE_FILE -->
+		<!-- INCLUDE {PROVIDER_TEMPLATE_FILE} -->
+	<!-- ENDIF -->
+	</div>
+</div>
+</form>
+
+<!-- INCLUDE overall_footer.html -->

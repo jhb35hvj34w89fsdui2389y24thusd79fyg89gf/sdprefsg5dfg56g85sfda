@@ -1,0 +1,41 @@
+<!-- IF not S_AVATARS_ENABLED -->
+
+<p>{L_AVATAR_FEATURES_DISABLED}</p>
+
+<!-- ENDIF -->
+
+	<fieldset>
+	<!-- IF ERROR --><p class="avatar-error">{ERROR}</p><!-- ENDIF -->
+		<dl class="ucp-panel-avatar">
+			<dd><!-- IF AVATAR -->{AVATAR}<!-- ELSE --><img src="{ROOT_PATH}styles/anduin/theme/images/avatars/no-avatar-3.png" /><!-- ENDIF --></dd>
+		</dl>
+	</fieldset>
+<dt class="ucp-panel-avatar-info"><span class="avatar-explain">{L_AVATAR_EXPLAIN}</span></dt>
+<fieldset>
+		<dl>
+			<dd><select name="avatar_driver" id="avatar_driver" data-togglable-settings="true" class="select-style">
+				<!-- BEGIN avatar_drivers -->
+				<option value="{avatar_drivers.DRIVER}"<!-- IF avatar_drivers.SELECTED --> selected="selected"<!-- ENDIF --> data-toggle-setting="#avatar_option_{avatar_drivers.DRIVER}">{avatar_drivers.L_TITLE}</option>
+				<!-- END avatar_drivers -->
+			</select></dd>
+		</dl>
+	</fieldset>
+	<div id="avatar_options">
+<!-- BEGIN avatar_drivers -->
+	<div id="avatar_option_{avatar_drivers.DRIVER}">
+	<noscript>
+	<h3 class="avatar_section_header">{avatar_drivers.L_TITLE}</h3>
+	</noscript>
+
+	<fieldset>
+	{avatar_drivers.OUTPUT}
+	</fieldset>
+	</div>
+<!-- END avatar_drivers -->
+	</div>
+<!-- IF not S_GROUP_MANAGE -->
+	<fieldset class="submit-buttons">
+        <input type="submit" name="avatar_delete" id="avatar_delete" value="Delete Avatar" class="button1" /> &nbsp;
+		<input type="submit" name="submit" value="Save Changes" class="button1" />
+	</fieldset>
+<!-- ENDIF -->

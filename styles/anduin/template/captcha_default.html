@@ -1,0 +1,19 @@
+<!-- IF S_TYPE == 1 -->
+<div class="captcha-panel">
+	<div class="inner">
+	<fieldset class="fields2">
+<!-- ENDIF -->
+
+	<dl>
+		<dd class="captcha-image"><img class="image-captcha" src="{CONFIRM_IMAGE_LINK}" alt="{L_CONFIRM_CODE}" /></dd>
+		<dd><input type="text" name="confirm_code" id="confirm_code" size="8" maxlength="8" tabindex="{$CAPTCHA_TAB_INDEX}" class="inputbox-login" title="{L_CONFIRM_CODE}" placeholder="CONFIRMATION CODE"/>
+            <br>
+		<!-- IF S_CONFIRM_REFRESH --><input type="submit" name="refresh_vc" id="refresh_vc" class="login-panel-button" value="{L_VC_REFRESH}" /><!-- ENDIF -->
+		<input type="hidden" name="confirm_id" id="confirm_id" value="{CONFIRM_ID}" /></dd>
+	</dl>
+
+<!-- IF S_TYPE == 1 -->
+	</fieldset>
+	</div>
+</div>
+<!-- ENDIF -->

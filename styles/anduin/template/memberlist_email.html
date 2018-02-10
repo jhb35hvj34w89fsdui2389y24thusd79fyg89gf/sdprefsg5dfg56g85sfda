@@ -1,0 +1,35 @@
+<!-- INCLUDE login-panel.html -->
+
+<a href="{U_INDEX}"><img class="contact-panel-image" src="{ROOT_PATH}styles/anduin/theme/images/logo.png"></img>
+</a>
+
+<!-- EVENT memberlist_email_before -->
+
+<form method="post" action="{S_POST_ACTION}" id="post">
+
+
+		<!-- IF ERROR_MESSAGE --><p class="contact-alert">{ERROR_MESSAGE}</p><!-- ENDIF -->
+		<fieldset class="fields2">
+            <dl>
+				<dd><input class="contact-inputbox" type="text" name="name" id="name" size="50" tabindex="2" value="{NAME}" placeholder="Your Name" /></dd>
+			</dl>
+			<dl>
+				<dd><input class="contact-inputbox" type="text" name="email" id="email" size="50" maxlength="100" tabindex="1" value="{EMAIL}" placeholder="Your Email Address" /></dd>
+			</dl>
+			<dl>
+				<dd><input class="contact-inputbox" type="text" name="subject" id="subject" size="50" tabindex="3" value="{SUBJECT}" placeholder="Subject" /></dd>
+			</dl>
+		<dl>
+			<dd><textarea class="contact-messagebox" name="message" id="message" rows="15" cols="76" tabindex="4" placeholder="Write your message here">{MESSAGE}</textarea></dd>
+		</dl>
+		</fieldset>
+
+
+		<fieldset class="submit-buttons">
+			<input type="submit" tabindex="6" name="submit" class="button1" value="{L_SEND_EMAIL}" />
+		</fieldset>
+{S_FORM_TOKEN}
+
+</form>
+
+<!-- INCLUDE overall_footer.html -->
